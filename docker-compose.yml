@@ -1,6 +1,5 @@
 magentobehat:
   image: widgento/magento-behat
-  command: /usr/local/bin/magento-behat.sh
   volumes:
     - /var/www/magento/htdocs:/var/www/magento/htdocs
   environment:
