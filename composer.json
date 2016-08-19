@@ -6,7 +6,9 @@
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "magetest/magento-behat-extension": "dev-develop"
+        "magetest/magento-behat-extension": "dev-develop",
+        "behat/mink-selenium2-driver": "@stable"
+        "behat/mink-zombie-driver": "@stable"
     },
     "autoload": {
         "psr-0": {

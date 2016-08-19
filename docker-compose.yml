@@ -1,7 +1,8 @@
 magentobehat:
   image: widgento/magento-behat
+  command: /usr/local/bin/magento-behat.sh
   volumes:
     - /var/www/magento/htdocs:/var/www/magento/htdocs
   environment:
-    MAGENTO_BASE_URL: http://magento.dev/
-    BEHAT_FEATURES_PATH: htdocs/features
+    MAGENTOBASEURL: http://magento.dev/
+    BEHATFEATURESPATH: htdocs/features
