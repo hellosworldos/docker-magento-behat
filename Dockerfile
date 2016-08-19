@@ -12,6 +12,7 @@ ADD composer.json /var/www/magento/composer.json
 ADD magento-behat.sh /opt/widgento/magento-behat/magento-behat.sh
 ADD init.sh /opt/widgento/magento-behat/init.sh
 ADD behat.yml /var/www/magento/behat.yml
+ADD /etc/supervisor/conf.d/selenium.conf /etc/supervisor/conf.d/selenium.conf
 
 RUN apt-get update --fix-missing \
     && apt-get -y upgrade \
