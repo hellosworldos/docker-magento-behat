@@ -1,0 +1,9 @@
+default:
+  extensions:
+    MageTest\MagentoExtension\Extension:
+      base_url: "{{MAGENTO_BASE_URL}}"
+
+  # The default is to have the features directory inside the project directory
+  # If you want the features directory inside the Magento installation, set paths.features:
+  paths:
+    features: "{{BEHAT_FEATURES_PATH}}"

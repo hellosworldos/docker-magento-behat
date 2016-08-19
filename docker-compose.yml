@@ -1,0 +1,7 @@
+magentobehat:
+  image: widgento/magento-behat
+  volumes:
+    - /var/www/magento/htdocs:/var/www/magento/htdocs
+  environment:
+    MAGENTO_BASE_URL: http://magento.dev/
+    BEHAT_FEATURES_PATH: htdocs/features
