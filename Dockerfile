@@ -23,8 +23,9 @@ RUN apt-get update --fix-missing \
     && export SELENIUMDRIVERFILE=${SELENIUMDRIVERURL##*/} \
     && cd /opt/selenium \
     && wget $SELENIUMDRIVERURL \
-    && ln -s "/opt/selenium/${SELENIUMDRIVERFILE}" /usr/local/bin/selenium-server-standalone.jar \
-    && cd /var/www/magento \
+    && ln -s "/opt/selenium/${SELENIUMDRIVERFILE}" /usr/local/bin/selenium-server-standalone.jar
+
+RUN cd /var/www/magento \
     && composer install --prefer-dist
 
 CMD ["/opt/widgento/magento-behat/init.sh"]
