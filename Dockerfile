@@ -25,6 +25,7 @@ RUN apt-get update --fix-missing \
     && wget $SELENIUMDRIVERURL \
     && ln -s "/opt/selenium/${SELENIUMDRIVERFILE}" /usr/local/bin/selenium-server-standalone.jar
 
+
 RUN cd /var/www/magento \
     && composer install --prefer-dist
 
