@@ -8,7 +8,8 @@
     "require-dev": {
         "magetest/magento-behat-extension": "dev-develop",
         "behat/mink-selenium2-driver": "@stable",
-        "behat/mink-zombie-driver": "@stable"
+        "behat/mink-zombie-driver": "@stable",
+        "behat/mink-goutte-driver": "@stable"
     },
     "autoload": {
         "psr-0": {
