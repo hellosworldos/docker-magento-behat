@@ -5,8 +5,9 @@ MAINTAINER widgento
 VOLUME ["/var/www/magento/htdocs"]
 
 ENV MAGENTOBASEURL "http://magento.dev/"
-ENV BEHATFEATURESPATH "htdocs/features"
+ENV BEHATFEATURESPATH "/var/www/magento/current/features"
 ENV SELENIUMDRIVERURL "http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar"
+ENV NODEJSVERSION "6.x"
 
 ADD composer.json /var/www/magento/composer.json
 ADD magento-behat.sh /opt/widgento/magento-behat/magento-behat.sh
@@ -23,8 +24,11 @@ RUN apt-get update --fix-missing \
     && export SELENIUMDRIVERFILE=${SELENIUMDRIVERURL##*/} \
     && cd /opt/selenium \
     && wget $SELENIUMDRIVERURL \
-    && ln -s "/opt/selenium/${SELENIUMDRIVERFILE}" /usr/local/bin/selenium-server-standalone.jar
-
+    && ln -s "/opt/selenium/${SELENIUMDRIVERFILE}" /usr/local/bin/selenium-server-standalone.jar \
+    && curl -sL https://deb.nodesource.com/setup_{$NODEJSVERSION} | bash - \
+    && apt-get install -y nodejs build-essential \
+    && npm install -g zombie \
+    && export NODE_PATH=$(npm root -g)
 
 RUN cd /var/www/magento \
     && composer install --prefer-dist
