@@ -49,11 +49,9 @@ magentobehat:
     - magentoapp:magento.dev
   environment:
     MAGENTOBASEURL: http://magento.dev/
-    BEHATFEATURESPATH: /var/www/magento/current/features
+    BEHATFEATURESPATH: /var/www/magento/htdocs/features
   volumes:
-    - ./htdocs:/var/www/magento/current
-    - ./shared/media:/var/www/magento/shared/media
-    - ./shared/var:/var/www/magento/shared/var
+    - ./htdocs:/var/www/magento/htdocs
 ```
 
 #### Run behat tests
