@@ -16,7 +16,7 @@ ADD behat.yml /var/www/magento/behat.yml
 ADD /etc/supervisor/conf.d/selenium.conf /etc/supervisor/conf.d/selenium.conf
 
 RUN chmod +x /opt/widgento/magento-behat/*.sh \
-    rm -rf /etc/supervisor/conf.d/nginx.conf
+    && rm -rf /etc/supervisor/conf.d/nginx.conf
 
 # Install Selenium Driver
 RUN apt-get update --fix-missing \
