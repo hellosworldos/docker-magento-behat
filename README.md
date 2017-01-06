@@ -1,6 +1,8 @@
 # widgento/magento-behat
 Container to run behat tests on magento1
 
+Uses [MageTest/BehatMage](https://github.com/MageTest/BehatMage) as base to create magento scenarios/
+
 ```bash
 docker pull widgento/magento-behat
 ```
